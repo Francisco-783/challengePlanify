@@ -2,7 +2,7 @@ import React from 'react';
 
 
 
-const progressBar = (progress:number) => {
+const ProgressBar = (progress:number) => {
   return (
     <div >
       {/* This contains the progress bar for the ordering process"*/}
@@ -10,4 +10,4 @@ const progressBar = (progress:number) => {
   );
 };
 
-export default progressBar;
+export default ProgressBar;
