@@ -5,9 +5,8 @@ import { useAppContext } from '../context';
 
 const ProgressBar = () => {
   const { storage } = useAppContext();
-  console.log(storage.progress)
   return (
-    <div >
+    <div className={"justify-start"}>
       {/* This contains the progress bar for the ordering process"*/}
       {storage.progress}
     </div>

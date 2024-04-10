@@ -20,7 +20,7 @@ export default function Home() {
     setStorage(updatedStorage);
   };
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main >
       <h1 >Challenge Planify {storage.order.name}</h1>
       <button onClick={handleChangeName}>CAMBIO</button>
       <Link href={"/ordenes"}>DSASDASD</Link>
