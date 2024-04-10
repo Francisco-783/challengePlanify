@@ -23,7 +23,7 @@ export default function Home() {
     <main >
       <h1 >Challenge Planify {storage.order.name}</h1>
       <button onClick={handleChangeName}>CAMBIO</button>
-      <Link href={"/ordenes"}>DSASDASD</Link>
+      <Link href={"/horarios"}>DSASDASD</Link>
     </main>
   );
 }
