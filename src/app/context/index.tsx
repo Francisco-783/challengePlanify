@@ -9,6 +9,7 @@ type Order = {
 type StorageType = {
     order: Order;
     orderList: Order[];
+    progress: number
 };
 
 type ContextValueType = {
@@ -18,7 +19,8 @@ type ContextValueType = {
 
 const defaultStorageValue: StorageType = {
     order: { name: ""},
-    orderList: []
+    orderList: [],
+    progress: 1
 };
 
 const AppContext = createContext<ContextValueType>({

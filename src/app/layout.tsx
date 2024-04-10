@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import NavigationBar from "./components/navigationBar";
 import { AppWrapper } from "./context";
+import ProgressBar from "./components/progressBar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,6 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <AppWrapper>
+        <ProgressBar/>
         {children}
         <NavigationBar/>
         </AppWrapper>
