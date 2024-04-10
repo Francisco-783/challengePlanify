@@ -1,15 +1,31 @@
-import React from 'react';
+"use client"
+import React, { useState, useEffect } from 'react';
+import 'tailwindcss/tailwind.css';
 
-type ButtonProps = {
+interface ButtonProps {
   text: string;
-  onClick: () => void; // Define the type of the function argument
-};
+  onClick: () => void;
+  choosen?: boolean;
+}
 
-const Button: React.FC<ButtonProps> = ({ text, onClick }) => {
+const Button: React.FC<ButtonProps> = ({ text, onClick, choosen }) => {
+  const [isChoosen, setIsChoosen] = useState(choosen || false);
+
+  useEffect(() => {
+    setIsChoosen(choosen || false);
+  }, [choosen]);
+
   return (
     <div>
-      {/* A button*/}
-      <button onClick={onClick}>{text}</button>
+      <button
+        className={`hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-sm ${isChoosen ? 'bg-gray-600' : 'bg-gray-400'}`}
+        onClick={() => {
+          setIsChoosen(prevChoosen => !prevChoosen);
+          onClick();
+        }}
+      >
+        {text}
+      </button>
     </div>
   );
 };
