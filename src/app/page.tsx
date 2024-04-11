@@ -21,10 +21,12 @@ export default function Home() {
     setStorage(updatedStorage);
   };
   return (
-    <main >
+    <main className='flex flex-col h-full justify-between'>
+      <div>
       <h1 >Challenge Planify {storage.order.name}</h1>
       <button onClick={handleChangeName}>CAMBIO</button>
       <Link href={"/horarios"}>DSASDASD</Link>
+      </div>
       <StepControls linkBack="" linkNext="" completed={false} />
     </main>
   );
