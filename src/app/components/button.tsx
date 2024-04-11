@@ -4,12 +4,16 @@ import 'tailwindcss/tailwind.css';
 
 interface ButtonProps {
   text: string;
-  onClick: () => void;
+  clickProcess: () => void;
   choosen?: boolean;
+  disable?: boolean;
 }
 
-const Button: React.FC<ButtonProps> = ({ text, onClick, choosen }) => {
+const Button: React.FC<ButtonProps> = ({ text, clickProcess, choosen, disable }) => {
   const [isChoosen, setIsChoosen] = useState(choosen || false);
+
+  const style = `hover:bg-gray-700 text-white transition-all font-bold py-1 px-4 rounded ${isChoosen ? 'bg-gray-600' : 'bg-gray-400'}`
+  const disStyle = `text-white transition-all font-bold py-1 px-4 rounded bg-gray-200 cursor-not-allowed`
 
   useEffect(() => {
     setIsChoosen(choosen || false);
@@ -18,10 +22,12 @@ const Button: React.FC<ButtonProps> = ({ text, onClick, choosen }) => {
   return (
     <div>
       <button
-        className={`hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-sm ${isChoosen ? 'bg-gray-600' : 'bg-gray-400'}`}
+        className={disable !== true ? style : disStyle}
         onClick={() => {
-          setIsChoosen(prevChoosen => !prevChoosen);
-          onClick();
+          if (!disable) {
+            setIsChoosen(!isChoosen);
+            clickProcess();
+          }
         }}
       >
         {text}

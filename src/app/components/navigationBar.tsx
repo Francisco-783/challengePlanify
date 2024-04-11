@@ -16,7 +16,7 @@ const NavigationBar = () => {
   console.log("RE RENDER")
   }, [storage.reserving]);
   return (
-    <div className="fixed bottom-0 left-0 w-full bg-white shadow-md flex justify-around py-2">
+    <div className="fixed bottom-0 left-0 w-full bg-white shadow-md flex justify-evenly py-2">
       <Link href="/" className={storage.reserving === false ? style : colorStile}>
         <BiSolidCoffee className='w-6 h-6 self-center'/>
         <p>Reservar</p>

@@ -1,14 +1,22 @@
 import React from 'react';
+import Button from './button';
+import 'tailwindcss/tailwind.css';
 
 
 
+interface StepControlsProps {
+  linkBack?: string;
+  linkNext?: string;
+  completed: boolean;
+}
 
-const StepControls = (linkBack:string, linkNext:string, completed:boolean) => {
-  
+const StepControls: React.FC<StepControlsProps> = ({ linkBack, linkNext, completed }) => {
+  let ddd = false
+  const tucky = () => {ddd = !ddd; console.log(ddd)}
   return (
-    <div >
-      {/* this contain 2 buttons, 1 to go back and 1 to go to the next page if is completed"*/}
-      Back, Next
+    <div className=''>
+      {linkBack !== undefined && <Button text="Anterior" clickProcess={tucky} choosen={ddd} />}
+      {linkNext !== undefined && <Button text="Siguiente" clickProcess={tucky} choosen={ddd} disable={!completed}/>}
     </div>
   );
 };
