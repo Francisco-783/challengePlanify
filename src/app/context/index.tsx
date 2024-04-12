@@ -2,8 +2,11 @@
 import { createContext, useContext, useState } from "react";
 
 type Order = {
+    id: number
     name: string
-    // need more values to define
+    category: string
+    date: string
+    time: string
 };
   
 type StorageType = {
@@ -19,7 +22,13 @@ type ContextValueType = {
 };
 
 const defaultStorageValue: StorageType = {
-    order: { name: ""},
+    order: {
+        id: 0, 
+        name: "",
+        category: "",
+        date: "",
+        time: "",
+    },
     orderList: [],
     progress: 1,
     reserving: true
@@ -41,3 +50,4 @@ export function AppWrapper({ children }: { children: React.ReactNode }) {
 export function useAppContext() {
     return useContext(AppContext);
 }
+
