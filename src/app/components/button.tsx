@@ -4,7 +4,7 @@ import 'tailwindcss/tailwind.css';
 
 interface ButtonProps {
   text: string;
-  clickProcess: () => void;
+  clickProcess?: () => void;
   choosen?: boolean;
   disable?: boolean;
 }
@@ -26,7 +26,7 @@ const Button: React.FC<ButtonProps> = ({ text, clickProcess, choosen, disable })
         onClick={() => {
           if (!disable) {
             setIsChoosen(!isChoosen);
-            clickProcess();
+            clickProcess != undefined && clickProcess();
           }
         }}
       >
