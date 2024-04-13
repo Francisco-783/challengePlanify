@@ -65,7 +65,8 @@ export default function Home() {
     organizeService();
     const updatedStorage = {
       ...storage, 
-      progress: 1
+      progress: 1,
+      reserving: true
     };
     setStorage(updatedStorage);
     console.log(storage)

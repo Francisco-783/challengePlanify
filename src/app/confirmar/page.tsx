@@ -29,7 +29,8 @@ export default function Confirmar() {
     if (storage.progress != 3){
     const updatedStorage = {
       ...storage, 
-      progress: 3
+      progress: 3,
+      reserving: true
     };
     setStorage(updatedStorage);}
     console.log(storage);

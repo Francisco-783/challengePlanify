@@ -40,7 +40,8 @@ export default function Horarios() {
     }
     const updatedStorage = {
       ...storage, 
-      progress: 2
+      progress: 2,
+      reserving: true
     };
     setStorage(updatedStorage);
     console.log(storage)
