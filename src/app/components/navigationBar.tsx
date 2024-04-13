@@ -13,7 +13,6 @@ const NavigationBar = () => {
   const colorStile = "text-purple-600 border-b-4 border-purple-600 outline-0 outline-offset-0 " + style ;
 
   useEffect(() => {
-  console.log("RE RENDER")
   }, [storage.reserving]);
   return (
     <div className="bottom-0 left-0 w-full bg-white shadow-md flex justify-evenly py-2">

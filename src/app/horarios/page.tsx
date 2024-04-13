@@ -44,7 +44,6 @@ export default function Horarios() {
       reserving: true
     };
     setStorage(updatedStorage);
-    console.log(storage)
   }, [slots.date]);
 
   return (

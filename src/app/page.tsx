@@ -39,7 +39,7 @@ export default function Home() {
       }
     });
     setOrganizedS(newOrganizedS);
-    console.log(newOrganizedS)
+
   }
 
     const handleChangeService = (service:ServiceItem) => {
@@ -69,7 +69,7 @@ export default function Home() {
       reserving: true
     };
     setStorage(updatedStorage);
-    console.log(storage)
+
   }, []);
 
   return (

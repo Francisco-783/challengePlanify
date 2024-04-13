@@ -22,7 +22,7 @@ export default function Confirmar() {
       orderList: [...storage.orderList, storage.order]
     };
     setStorage(updatedStorage);
-    console.log("confirmado")
+
   }
 
   useEffect(() => {
@@ -33,7 +33,6 @@ export default function Confirmar() {
       reserving: true
     };
     setStorage(updatedStorage);}
-    console.log(storage);
   }, [storage]);
   return (
       <main className='flex flex-col h-full justify-between items-center'>
