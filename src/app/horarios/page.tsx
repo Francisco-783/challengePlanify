@@ -52,7 +52,7 @@ export default function Horarios() {
         {storage.order.id === 0 ? (
           <>
             <h1 className='pb-1'>Servicio no seleccionado</h1>
-            <p className='bg-green-300 rounded p-0.5 mb-2.5'>Se necesita volver a la pagina de selecciona de servicio</p>
+            <p className='bg-green-300 rounded p-0.5 mb-2.5'>Se necesita volver a la pagina de seleccion de servicio</p>
             <Link href={"/"}><Button text='Volver'/></Link>
           </>
         ) : (
