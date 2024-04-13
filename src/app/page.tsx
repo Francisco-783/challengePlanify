@@ -1,7 +1,6 @@
 "use client"
 import 'tailwindcss/tailwind.css';
 import { useAppContext } from '@/app/context/index';
-import Link from 'next/link';
 import StepControls from './components/stepControls';
 import { useEffect, useState } from 'react';
 import services from "./simulatedAPI/services.json"
@@ -64,7 +63,12 @@ export default function Home() {
 
   useEffect(() => {
     organizeService();
-    console.log(storage.order)
+    const updatedStorage = {
+      ...storage, 
+      progress: 1
+    };
+    setStorage(updatedStorage);
+    console.log(storage)
   }, []);
 
   return (
