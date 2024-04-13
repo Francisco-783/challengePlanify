@@ -57,8 +57,8 @@ export default function Horarios() {
           </>
         ) : (
           <>
-            <h1>Proximos turnos disponibles</h1>
-            <h1>{organizedDates.date}</h1>
+            <h1 >Proximos turnos disponibles</h1>
+            <h1 className='my-3'>{organizedDates.date}</h1>
             <div className="grid grid-cols-2 gap-4">
               {organizedDates.availableTimeslots.map((time, index) => (
                 <button
