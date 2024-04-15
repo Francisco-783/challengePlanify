@@ -5,14 +5,14 @@ import Link from 'next/link';
 import 'tailwindcss/tailwind.css';
 import { useAppContext } from '../context';
 
-
+// the bottom bar
 
 const NavigationBar = () => {
   const { storage} = useAppContext(); 
   const style = "transition-all justify-center flex justify-items-center flex-col"
   const colorStile = "text-purple-600 border-b-4 border-purple-600 outline-0 outline-offset-0 " + style ;
 
-  useEffect(() => {
+  useEffect(() => { //  to make the buttons change color depending on what page they are on
   }, [storage.reserving]);
   return (
     <div className="bottom-0 left-0 w-full bg-white shadow-md flex justify-evenly py-2">

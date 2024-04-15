@@ -3,13 +3,13 @@ import Button from './button';
 import 'tailwindcss/tailwind.css';
 import Link from 'next/link';
 
-
+// this component holds "next" and "back" buttons to control the process
 
 interface StepControlsProps {
-  linkBack?: string;
-  linkNext?: string;
-  completed: boolean;
-  isEnd?: () => void;
+  linkBack?: string; //define where the "back" button takes you
+  linkNext?: string; //define where the "next" button takes you
+  completed: boolean; //This defines if you can continue with the next step of the process or not.
+  isEnd?: () => void; // if this get a process you are in "confirmar" page
 }
 
 const StepControls: React.FC<StepControlsProps> = ({ linkBack, linkNext, completed, isEnd }) => {

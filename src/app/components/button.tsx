@@ -2,11 +2,13 @@
 import React, { useState, useEffect } from 'react';
 import 'tailwindcss/tailwind.css';
 
+//button component
+
 interface ButtonProps {
-  text: string;
-  clickProcess?: () => void;
-  choosen?: boolean;
-  disable?: boolean;
+  text: string; // defines the button text
+  clickProcess?: () => void; //defines the process
+  choosen?: boolean; // it change the style of the button to make the hover style stay
+  disable?: boolean; // make the button disable
 }
 
 const Button: React.FC<ButtonProps> = ({ text, clickProcess, choosen, disable }) => {

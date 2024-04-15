@@ -3,10 +3,11 @@ import React from 'react';
 import { useAppContext } from '../context';
 import 'tailwindcss/tailwind.css';
 
+
 const ProgressBar = () => {
   const { storage } = useAppContext();
   let textBar = "Barra de Progreso"
-  // Función para calcular el ancho de la barra de progreso en función del valor de storage.progress
+  // Function to calculate the width of the progress bar based on the value of storage.progress
   const calculateWidth = () => {
     switch (storage.progress) {
       case 1:
@@ -20,11 +21,11 @@ const ProgressBar = () => {
         return '85%';
       default:
         textBar = "Turnos reservados"
-        return '100%'; // Si el progreso es mayor que 3 o menor que 1, no se muestra la barra de progreso
+        return '100%';
     }
   };
 
-  // Estilo dinámico para la barra de progreso
+  // Dynamic style for the progress bar
   const progressBarStyle = {
     width: calculateWidth(),
     background: '#1aae9f',
