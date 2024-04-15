@@ -74,7 +74,7 @@ export default function Home() {
 
   return (
     <main className='flex flex-col h-full justify-between items-center '>
-      <div className='border-2 border-grey w-11/12 mt-1 p-4 max-w-3xl'>
+      <div className='border-2 border-grey w-11/12 mt-1 p-4 max-w-3xl rounded'>
         <h1>Categorias</h1>
         {organizedS.length > 0 &&
           organizedS.map(cateItem => (
