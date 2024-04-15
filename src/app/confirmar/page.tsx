@@ -6,10 +6,12 @@ import { useEffect } from 'react';
 import Link from 'next/link';
 import Button from '../components/button';
 
+//This page is to confirm the reservation
+
 export default function Confirmar() {
   const { storage, setStorage } = useAppContext();
 
-  const submitHandler = () =>{
+  const submitHandler = () =>{ 
     const updatedStorage = {
       ...storage, 
       order: {
@@ -27,17 +29,17 @@ export default function Confirmar() {
 
   useEffect(() => {
     if (storage.progress != 3){
-    const updatedStorage = {
+    const updatedStorage = { //change the progress bar mode and navigationBar mode
       ...storage, 
       progress: 3,
-      reserving: true
+      reserving: true 
     };
     setStorage(updatedStorage);}
   }, [storage]);
   return (
       <main className='flex flex-col h-full justify-between items-center'>
         <div className='border-2 border-grey w-11/12 mt-1 p-4 max-w-3xl rounded'>
-          {storage.order.id === 0 && storage.order.time === "" ? (
+          {storage.order.id === 0 && storage.order.time === "" ? ( //if you didn't complete your reservation data this should be show
             <>
               <h1 className='pb-1'>Orden no completada</h1>
               <p className='bg-green-300 rounded p-0.5 mb-2.5'>Se necesita volver a la pagina de seleccion de servicio para completar la reserva</p>
@@ -50,7 +52,7 @@ export default function Confirmar() {
             </>
           )}
         </div>
-        <StepControls linkBack={"/horarios"} isEnd={storage.order.id != 0 ? () => submitHandler() : undefined} completed={true} />
+        <StepControls linkBack={"/horarios"} isEnd={storage.order.id != 0 ? () => submitHandler() : undefined} completed={true} /> 
       </main>
   );
 }

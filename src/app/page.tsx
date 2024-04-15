@@ -20,14 +20,14 @@ type OrganizedService = {
   id: number;
 };
 
-
+// main page, on this page you select the service you are going to reserve
 
 export default function Home() {
   const { storage, setStorage } = useAppContext(); 
   const [selected, setSelected] = useState(9999999)
   const [organizedS, setOrganizedS] = useState<OrganizedService[]>([]);
 
-  const organizeService = () => {
+  const organizeService = () => { //this separate the services in categories
     const newOrganizedS: OrganizedService[] = [];
     services.services.forEach(service => {
       const existingCategoryIndex = newOrganizedS.findIndex(item => item.category === service.category);
@@ -42,7 +42,7 @@ export default function Home() {
 
   }
 
-    const handleChangeService = (service:ServiceItem) => {
+    const handleChangeService = (service:ServiceItem) => { //this change the service saved in the storage (global context)
 
     const updatedStorage = {
       ...storage, 
@@ -56,14 +56,14 @@ export default function Home() {
     setStorage(updatedStorage);
   };
 
-  const changeSelected = (id:number) => {
+  const changeSelected = (id:number) => { //With this process you change the category that is displayed
     const cateSelected = selected === id ? 99999 : id
     setSelected(cateSelected)
   }
 
   useEffect(() => {
-    organizeService();
-    const updatedStorage = {
+    organizeService(); //organize all services
+    const updatedStorage = { //change the progress bar mode and navigationBar mode
       ...storage, 
       progress: 1,
       reserving: true

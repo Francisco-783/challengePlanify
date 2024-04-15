@@ -7,6 +7,7 @@ import slots from "../simulatedAPI/slots.json";
 import Button from '../components/button';
 import Link from 'next/link';
 
+// On this page you choose the reservation time
 
 interface AvailableSlots {
   date: string;
@@ -31,16 +32,16 @@ export default function Horarios() {
   }
 
   useEffect(() => {
-    if (slots.date) {
+    if (slots.date) { // this change the dato to "year-mont-day" yo text
       const date = new Date(slots.date);
       const day = date.getDate();
       const month = date.toLocaleString('es', { month: 'long' });
       const dateText = `${day} de ${month}`;
       setOrganizedDates({...organizedDates,  date:dateText, availableTimeslots: slots.availableTimeslots});
     }
-    const updatedStorage = {
+    const updatedStorage = { //change the progress bar mode and navigationBar mode
       ...storage, 
-      progress: 2,
+      progress: 2, 
       reserving: true
     };
     setStorage(updatedStorage);
@@ -49,7 +50,7 @@ export default function Horarios() {
   return (
     <main className='flex flex-col h-full justify-between items-center'>
       <div className='border-2 border-grey w-11/12 mt-1 p-4 max-w-3xl rounded'>
-        {storage.order.id === 0 ? (
+        {storage.order.id === 0 ? ( //if didn't choose the service in the reservation this should be show
           <>
             <h1 className='pb-1'>Servicio no seleccionado</h1>
             <p className='bg-green-300 rounded p-0.5 mb-2.5'>Se necesita volver a la pagina de seleccion de servicio</p>

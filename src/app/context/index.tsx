@@ -1,7 +1,9 @@
 "use client"
 import { createContext, useContext, useState } from "react";
 
-type Order = {
+// this is the global context of the app
+
+type Order = { //order type
     id: number
     name: string
     category: string
@@ -10,10 +12,10 @@ type Order = {
 };
   
 type StorageType = {
-    order: Order;
-    orderList: Order[];
-    progress: number
-    reserving: boolean
+    order: Order; //the new order
+    orderList: Order[]; // orders already made
+    progress: number // number to chage the progress bar mode
+    reserving: boolean // this change the buttons colors in navigationBar
 };
 
 type ContextValueType = {
@@ -39,7 +41,7 @@ const AppContext = createContext<ContextValueType>({
     setStorage: () => {} 
 });
 
-export function AppWrapper({ children }: { children: React.ReactNode }) {
+export function AppWrapper({ children }: { children: React.ReactNode }) { 
     const [storage, setStorage] = useState(defaultStorageValue);
 
     return (
