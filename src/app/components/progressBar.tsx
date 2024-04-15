@@ -32,7 +32,7 @@ const ProgressBar = () => {
   };
 
   return (
-    <div className=" w-11/12 mt-4 mb-4">
+    <div className=" w-11/12 mt-4 mb-4  max-w-3xl">
       <p className="text-sm mb-1 font-bold text-gray-800">{textBar}</p>
       <div className="bg-gray-200 h-4 rounded overflow-hidden">
         <div style={progressBarStyle} className="h-full"></div>

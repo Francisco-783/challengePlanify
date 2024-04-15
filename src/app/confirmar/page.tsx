@@ -36,7 +36,7 @@ export default function Confirmar() {
   }, [storage]);
   return (
       <main className='flex flex-col h-full justify-between items-center'>
-        <div className='border-2 border-grey w-11/12 mt-1 p-4'>
+        <div className='border-2 border-grey w-11/12 mt-1 p-4 max-w-3xl'>
           {storage.order.id === 0 && storage.order.time === "" ? (
             <>
               <h1 className='pb-1'>Orden no completada</h1>

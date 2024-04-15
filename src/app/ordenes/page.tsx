@@ -18,8 +18,8 @@ export default function Ordenes() {
   }, []);
 
   return (
-
-    <div className='border-2 border-grey w-full mt-1 p-4'>
+    <main className='flex flex-col h-full justify-between items-center'>
+    <div className='border-2 border-grey w-11/12 mt-1 p-4 max-w-3xl rounded'>
       {storage.orderList.length === 0 ? (
         <>
           <h1 className='pb-1'>Ninguna orden registrada</h1>
@@ -29,7 +29,7 @@ export default function Ordenes() {
       ) : (
         <>
             {storage.orderList.map(reserva => (
-              <div className='w-64 border-2 border-grey mt-1 p-4'>
+              <div className='border-2 border-grey mt-1 p-4 rounded '>
                 <h1>{reserva.name}</h1>
                 <h3>Servicio: {reserva.name}</h3>
                 <p>Fecha: {reserva.date} {reserva.time}</p>
@@ -38,6 +38,6 @@ export default function Ordenes() {
         </>
       )}
     </div>
-
+    </main>
   );
 }

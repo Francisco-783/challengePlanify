@@ -22,7 +22,7 @@ export default function RootLayout({
       <body className={`${inter.className} flex flex-col h-screen justify-between items-center w-screen`}>
         <AppWrapper>
         <ProgressBar/>
-        <div className="flex-grow">{children}</div>
+        <div className="flex-grow w-screen">{children}</div>
         <NavigationBar />
         </AppWrapper>
         </body>
