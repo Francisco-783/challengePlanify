@@ -7,6 +7,10 @@ Ademas agregue una pantalla extra "ordenes" donde se pueden ver todas las ordene
 
 techStack: Typescript, React y tailwindCSS
 
+Desafio: https://lopsided-cymbal-502.notion.site/Challenge-Desarrollador-Junior-c822bb2f65c340cb8fbd191959027adc
+
+Deploy: https://challenge-planify-steel.vercel.app/
+
 ## Desplegar el proyecto
 
 
